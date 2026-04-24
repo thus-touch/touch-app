@@ -1,0 +1,308 @@
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Public+Sans:wght@400;500;600&display=swap");
+
+:root {
+	--bg: #f6f2eb;
+	--surface: #fffdf8;
+	--surface-strong: #fffaf2;
+	--ink: #1f2530;
+	--ink-soft: #4c5666;
+	--line: #d9cfbf;
+	--accent: #1b6f7b;
+	--accent-soft: #d7eef1;
+	--radius: 16px;
+	--radius-sm: 10px;
+	--max-width: 1080px;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100%;
+}
+
+body {
+	font-family: "Public Sans", "Avenir Next", "Segoe UI", sans-serif;
+	background: radial-gradient(circle at 16% 10%, #fffaf2 0%, transparent 40%),
+		linear-gradient(180deg, #f7f3ec 0%, #f1ece3 100%);
+	color: var(--ink);
+	line-height: 1.55;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+}
+
+main {
+	min-height: calc(100vh - 180px);
+}
+
+.container {
+	max-width: var(--max-width);
+	margin: 0 auto;
+	padding: 0 24px;
+}
+
+.hero {
+	position: relative;
+	overflow: hidden;
+	padding: 72px 24px 56px;
+}
+
+.hero-noise {
+	position: absolute;
+	inset: 0;
+	background-image: radial-gradient(rgba(27, 111, 123, 0.08) 1px, transparent 1px);
+	background-size: 10px 10px;
+	mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0));
+	pointer-events: none;
+}
+
+.hero-container {
+	max-width: 840px;
+	margin: 0 auto;
+	position: relative;
+	text-align: center;
+	animation: reveal-up 500ms ease-out both;
+}
+
+.hero-image {
+	display: block;
+	width: clamp(92px, 16vw, 160px);
+	height: auto;
+	margin: 0 auto 18px;
+	border-radius: 22px;
+	box-shadow: 0 14px 28px rgba(31, 37, 48, 0.2);
+	border: 1px solid #d4c7b5;
+}
+
+.eyebrow {
+	display: inline-flex;
+	padding: 6px 14px;
+	margin: 0 0 18px;
+	border-radius: 999px;
+	background: var(--accent-soft);
+	color: #104c56;
+	font-size: 0.85rem;
+	font-weight: 600;
+	letter-spacing: 0.02em;
+}
+
+.hero-title {
+	margin: 0;
+	font-family: "Fraunces", "Iowan Old Style", serif;
+	font-size: clamp(2rem, 5vw, 4rem);
+	line-height: 1.1;
+	font-weight: 700;
+	letter-spacing: -0.015em;
+}
+
+.hero-subtitle {
+	margin: 20px auto 0;
+	max-width: 680px;
+	font-size: 1.08rem;
+	color: var(--ink-soft);
+}
+
+.hero-chip-row {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	gap: 10px;
+	margin-top: 24px;
+	animation: reveal-up 560ms ease-out both;
+}
+
+.hero-chip {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	min-width: 64px;
+	height: 40px;
+	padding: 0 14px;
+	border: 1px solid var(--line);
+	border-radius: 999px;
+	background: var(--surface);
+	font-size: 0.92rem;
+	font-weight: 500;
+}
+
+.features {
+	padding: 24px 0 56px;
+}
+
+.section-title {
+	margin: 0 0 24px;
+	text-align: center;
+	font-family: "Fraunces", "Iowan Old Style", serif;
+	font-size: clamp(1.6rem, 3.6vw, 2.4rem);
+	line-height: 1.2;
+}
+
+.feature-grid {
+	display: grid;
+	grid-template-columns: repeat(3, minmax(0, 1fr));
+	gap: 14px;
+}
+
+.feature-card {
+	background: var(--surface-strong);
+	border: 1px solid var(--line);
+	border-radius: var(--radius);
+	padding: 18px;
+	min-height: 152px;
+	box-shadow: 0 10px 20px rgba(31, 37, 48, 0.05);
+	transform: translateY(0);
+	transition: transform 200ms ease, box-shadow 200ms ease, border-color 200ms ease;
+}
+
+.feature-card:hover {
+	transform: translateY(-3px);
+	border-color: #c0b29a;
+	box-shadow: 0 14px 26px rgba(31, 37, 48, 0.08);
+}
+
+.feature-title {
+	margin: 0;
+	font-size: 1rem;
+	line-height: 1.35;
+}
+
+.feature-desc {
+	margin: 10px 0 0;
+	font-size: 0.96rem;
+	color: var(--ink-soft);
+}
+
+
+.footer {
+	padding: 24px 0 32px;
+	border-top: 1px solid var(--line);
+	background: rgba(255, 255, 255, 0.35);
+	backdrop-filter: blur(3px);
+}
+
+.footer-container {
+	text-align: center;
+	padding: 0 24px;
+}
+
+.footer-nav {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 12px;
+}
+
+.footer-link {
+	color: #0f5964;
+	text-decoration: none;
+	font-size: 0.95rem;
+	font-weight: 600;
+}
+
+.footer-link:hover {
+	text-decoration: underline;
+}
+
+.footer-credit {
+	margin: 0;
+	font-size: 0.88rem;
+	color: #6a7280;
+}
+
+.privacy {
+	padding: 40px 0 72px;
+	animation: reveal-up 420ms ease-out both;
+}
+
+.privacy-paper {
+	max-width: 880px;
+	margin: 0 auto;
+	padding: 26px;
+	border-radius: var(--radius);
+	border: 1px solid var(--line);
+	background: var(--surface);
+	box-shadow: 0 12px 22px rgba(31, 37, 48, 0.05);
+}
+
+.privacy h1 {
+	margin-top: 0;
+	font-family: "Fraunces", "Iowan Old Style", serif;
+	font-size: clamp(1.8rem, 4vw, 2.6rem);
+	line-height: 1.2;
+}
+
+.privacy h2 {
+	margin: 24px 0 10px;
+	font-size: 1.1rem;
+	line-height: 1.35;
+}
+
+.privacy p,
+.privacy li {
+	font-size: 0.98rem;
+	color: var(--ink-soft);
+}
+
+.privacy a {
+	color: #0f5964;
+	text-decoration: underline;
+	text-underline-offset: 2px;
+}
+
+a:focus-visible,
+button:focus-visible {
+	outline: 3px solid #0f5964;
+	outline-offset: 3px;
+	border-radius: var(--radius-sm);
+}
+
+@media (max-width: 980px) {
+	.feature-grid {
+		grid-template-columns: repeat(2, minmax(0, 1fr));
+	}
+}
+
+@media (max-width: 680px) {
+	.hero {
+		padding: 56px 18px 42px;
+	}
+
+	.container {
+		padding: 0 18px;
+	}
+
+	.feature-grid {
+		grid-template-columns: 1fr;
+	}
+
+	.hero-chip {
+		min-width: 72px;
+	}
+
+	.privacy-paper {
+		padding: 20px;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	* {
+		animation-duration: 0.01ms !important;
+		animation-iteration-count: 1 !important;
+		transition-duration: 0.01ms !important;
+	}
+}
+
+@keyframes reveal-up {
+	from {
+		opacity: 0;
+		transform: translateY(14px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

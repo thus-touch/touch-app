@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://touch.omitlens.com/sitemap.xml
